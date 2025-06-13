@@ -1,0 +1,12 @@
+*.hdf5
+*.pkl
+*.mat
+*.csv
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.bin
+*.pth
