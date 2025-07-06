@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live EMG Viewer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #buffer {
+      font-size: 1.2rem;
+      color: green;
+    }
+    #latest {
+      font-family: monospace;
+      background: #f5f5f5;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>? EMG Data Viewer</h1>
+  <p>Buffer size: <span id="buffer">Loading...</span></p>
+  <h3>Last 10 samples:</h3>
+  <pre id="latest">Waiting for data...</pre>
+
+  <script>
+    async function fetchEMG() {
+      try {
+        const res = await fetch("http://localhost:5000/emg");
+        const data = await res.json();
+
+        document.getElementById("buffer").textContent = data.buffer_size;
+        document.getElementById("latest").textContent = data.latest.join(", ");
+      } catch (err) {
+        console.error("Failed to fetch EMG data:", err);
+      }
+    }
+
+    setInterval(fetchEMG, 500); // Poll every 500ms
+  </script>
+</body>
+</html>
