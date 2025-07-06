@@ -39,8 +39,8 @@ def func(combined_list):
         plt.title('Patient Symptom and Organ Network')
         plt.show()
 
-    # Plot the graph
-    plot_graph(G)
+    # Plot the graph (commented out for web application to prevent GUI issues)
+    # plot_graph(G)
 
 
 
