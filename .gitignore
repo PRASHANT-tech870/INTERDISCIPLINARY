@@ -9,4 +9,5 @@
 *.bmp
 *.bin
 *.pth
+*.env
 /venv/
