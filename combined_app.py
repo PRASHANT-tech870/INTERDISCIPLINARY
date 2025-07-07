@@ -260,8 +260,8 @@ def combine_analysis():
     
     try:
         # Linear Opinion Pool weights
-        a1 = 0.918  # Text analysis weight (91.8%)
-        a2 = 0.976  # EMG analysis weight (97.6%)
+        a1 = 0.7635 # Text analysis weight (91.8%)
+        a2 = 0.977  # EMG analysis weight (97.6%)
         
         # Get probabilities
         p1 = text_analysis_result["probability"]
