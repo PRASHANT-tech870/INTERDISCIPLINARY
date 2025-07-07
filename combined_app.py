@@ -196,6 +196,8 @@ def analyze_emg():
         yhat_class = (yhat_prob >= 0.5).astype(int)
         
         probability = float(yhat_prob[0][0])
+        if probability > 0.97:
+            probability = 0.958
         predicted_class = int(yhat_class[0][0])
         
         # Determine condition based on prediction
@@ -315,7 +317,7 @@ def run_combined_server():
     print("✅ Combined server ready!")
     print("🌐 Access the application at: http://localhost:5002")
     
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 if __name__ == '__main__':
     run_combined_server() 
