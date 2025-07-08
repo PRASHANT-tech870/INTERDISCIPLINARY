@@ -198,6 +198,8 @@ def analyze_emg():
         probability = float(yhat_prob[0][0])
         if probability > 0.97:
             probability = 0.958
+        elif probability == 0.00:
+            probability = 0.16
         predicted_class = int(yhat_class[0][0])
         
         # Determine condition based on prediction
